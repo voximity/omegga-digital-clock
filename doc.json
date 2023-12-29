@@ -1,0 +1,50 @@
+{
+  "name": "digital-clock",
+  "description": "A digital clock made out of bricks.",
+  "author": "voximity",
+  "config": {
+    "clock-behavior": {
+      "description": "The clock behavior. Count down, up, or show current time.",
+      "type": "enum",
+      "options": ["countdown", "countup", "time"],
+      "default": "countdown"
+    },
+    "clock-authorized": {
+      "description": "A list of roles that are authorized to use clock commands.",
+      "type": "list",
+      "itemType": "role",
+      "default": []
+    },
+    "clock-timestamp": {
+      "description": "The timestamp we're counting down to.",
+      "type": "number",
+      "default": 1672549200
+    },
+    "clock-include-days": {
+      "description": "Whether or not to include days.",
+      "type": "boolean",
+      "default": false
+    },
+    "clock-material": {
+      "description": "The material name of the clock bricks.",
+      "type": "string",
+      "default": "BMC_Glow"
+    },
+    "clock-color": {
+      "description": "Comma-separated RGB values for the clock bricks.",
+      "type": "string",
+      "default": "255,255,255"
+    },
+    "clock-colon-blink": {
+      "description": "Whether or not the colons should blink.",
+      "type": "boolean",
+      "default": true
+    },
+    "clock-update-seconds": {
+      "description": "The amount of time to wait between clock updates, in seconds.",
+      "type": "number",
+      "default": 1
+    }
+  },
+  "commands": []
+}
