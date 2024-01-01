@@ -44,6 +44,11 @@
       "description": "The amount of time to wait between clock updates, in seconds.",
       "type": "number",
       "default": 1
+    },
+    "clock-12h": {
+      "description": "Whether or not to use 12 hour time when the clock behavior is set to \"time\".",
+      "type": "boolean",
+      "default": false
     }
   },
   "commands": []

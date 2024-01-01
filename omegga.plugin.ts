@@ -28,6 +28,7 @@ type Config = {
   ['clock-color']: string;
   ['clock-colon-blink']: boolean;
   ['clock-update-seconds']: number;
+  ['clock-12h']: boolean;
 };
 
 type Storage = {
@@ -432,6 +433,11 @@ export default class Plugin implements OmeggaPlugin<Config, Storage> {
         t = Math.round(Math.max(0, Date.now() / 1000 - this.startTime));
         break;
       case 'time':
+        const midnight = new Date();
+        midnight.setHours(0, 0, 0, 0);
+        t = Math.round((new Date().getTime() - midnight.getTime()) / 1000);
+        if (this.config['clock-12h']) t %= 43200;
+        break;
       default:
         t = 0;
         break;
